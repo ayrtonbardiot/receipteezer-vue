@@ -74,10 +74,7 @@ export default {
   },
   methods: {
     secondToM(d) {
-      d = Number(d);
-      var m = Math.floor((d % 3600) / 60);
-      var s = Math.floor((d % 3600) % 60);
-      return m + ":" + s;
+      return Math.floor(d / 60) + ":" + (d % 60 ? d % 60 : '00');
     },
     dlimg() {
       domtoimage
