@@ -1,12 +1,46 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <link
+      href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <div id="dz-root" style-="display: none"></div>
+    <router-view />
+    <br />
+    <footer>
+      Receipteezer by <a href="https://github.com/notaryzw3b">notaryz</a>, idea
+      from <a href="https://michellexliu.github.io/">Michelle Liu</a>
+    </footer>
   </div>
 </template>
+
+<script>
+/* global DZ*/
+export default {
+  name: "App",
+  mounted() {
+    window.dzAsyncInit = () => {
+      this.init();
+    };
+    (() => {
+      var e = document.createElement("script");
+      e.src = "https://e-cdns-files.dzcdn.net/js/min/dz.js";
+      e.async = true;
+      document.getElementById("dz-root").appendChild(e);
+    })();
+  },
+  methods: {
+    init() {
+      DZ.init({
+        appId: "455862",
+        channelUrl: "https://wati-shop.fr/channel.php",
+      });
+    },
+  },
+};
+</script>
 
 <style>
 #app {
@@ -14,19 +48,5 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
 }
 </style>

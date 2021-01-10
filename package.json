@@ -1,5 +1,5 @@
 {
-  "name": "receipteezer-vue",
+  "name": "Receipteezer",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "dom-to-image": "^2.6.0",
+    "jquery": "^3.5.1",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0"

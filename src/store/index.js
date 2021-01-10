@@ -5,11 +5,30 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    buttonlgn: true,
+    tracks: null,
+    user: null,
   },
   mutations: {
+    changeButton(state) {
+      state.buttonlgn = !state.buttonlgn
+    },
+    setTracks(state, payload) {
+      state.tracks = payload
+    },
+    setUser(state, payload) {
+      state.user = payload
+    }
   },
-  actions: {
-  },
-  modules: {
+  getters: {
+    btnlgn: state => {
+      return state.buttonlgn;
+    },
+    getTracks: state => {
+      return state.tracks
+    },
+    getUser: state => {
+      return state.user
+    }
   }
 })
